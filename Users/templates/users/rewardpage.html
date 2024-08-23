@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content%}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Rewards</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="{% url 'userpage' %}" class="back-btn" style="float: left;">&lt;</a>
+            <h2>Get Rewards</h2>
+        </header>
+        <section class="rewards-section">
+            <div class="reward-card">
+                <p>Scan and upload your slip and get the REWARDS!</p>
+                <form action="{% url 'upload_slip' %}" method="get">
+                    <button type="submit" class="button">Continue</button>
+                </form>
+            </div>
+            <div class="reward-card">
+                <p>Invite friends to receive points and get to spin the REWARDS WHEEL!</p>
+                <button>Invite friends</button>
+            </div>
+        </section>
+    </div>
+
+{% endblock%}

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content%}
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - ReCycSmart Bin</title>
+<body>
+    <div class="container">
+        <!-- Add the image on top -->
+        <img src="{% static 'img/recyc-bin.jpg' %}" alt="ReCycSmart Bin Image">
+
+        <!-- Center the heading -->
+        <h1>About ReCycSmart Bin</h1>
+
+        <!-- Center the paragraph and features list -->
+        <p>
+            Drawing inspiration from the best practices in Sweden and Korea, ReCycSmart Bin is an innovative smart waste management solution designed to revolutionize recycling in urban and rural environments.
+            Our smart bins utilize cutting-edge technology to streamline waste collection, sorting, and recycling processes, promoting sustainability and environmental conservation.
+        </p>
+        
+        <h2>Features and Capabilities:</h2>
+        <ul style="list-style-position: inside;">
+            <li>Fill level sensors for waste accumulation detection.</li>
+            <li>Material recognition sensors for identifying recyclable materials.</li>
+            <li>Contamination detection sensors for identifying non-recyclable items.</li>
+            <li>Temperature and humidity sensors for compost optimization.</li>
+            <li>Weight sensors for tracking recycling volumes.</li>
+            <li>Compaction mechanisms to maximize bin capacity.</li>
+            <li>Solar power for energy efficiency.</li>
+            <li>GPS tracking technology for bin location monitoring.</li>
+        </ul>
+    </div>
+
+{% endblock%}

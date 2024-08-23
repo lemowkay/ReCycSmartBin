@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content%}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReCycSmart</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #fff;
+            align-items: bottom;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            max-width: 600px; /* Set a maximum width for better readability */
+            width: 100%; /* Ensure the container is responsive */
+        }
+
+        .info-card {
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .info-card h4 {
+            margin-top: 0;
+        }
+
+        .info-card p {
+            margin-bottom: 0;
+        }
+
+        button {
+            background-color: #28a745; /* Bootstrap green */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #218838; /* Darker green on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="{% url 'rewards' %}" class="back-btn" style="float: left;">&lt;</a>
+        <div class="container">
+            <h1>ReCycSmart</h1>
+            <div class="info-card">
+                <h4>Bin code: {{ bin_code }}</h4>
+                <p>Date: {{ date }}</p>
+                <p>Time: {{ time }}</p>
+                <p>Total weight: {{ total_weight }}</p>
+            </div>
+            <button>Take Photo</button>
+        </div>
+            <br/>
+            <br/>
+            <a href="{% url 'price' %}" class="button">Next</a>
+</body>
+</html>
+
+{% endblock%}

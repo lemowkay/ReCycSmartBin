@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% block content%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <a href="{% url 'request' %}" class="back-btn" style="float: left;">&lt;</a>
+    <title>Kimberley and Surrounding Areas - Dustbin Alerts</title>
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+
+    <style>
+        #map {
+            height: 500px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Kimberley and Nearby Areas - Dustbin Alerts</h1>
+    <div id="map"></div>
+
+    <script>
+        // Initialize the map and set its view to Kimberley, South Africa
+        var map = L.map('map').setView([-28.7383, 24.7638], 14); // Zoom level 14
+
+        // Add OpenStreetMap tiles to the map
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Define nearby places and their coordinates, with messages about the dustbin status
+        var places = [
+            {"name": "New Park", "lat": -28.7420, "lng": 24.7705, "message": "The dustbin is full"},
+            {"name": "Albertynshof", "lat": -28.7510, "lng": 24.7580, "message": "The dustbin is full"},
+            {"name": "De Beers", "lat": -28.7355, "lng": 24.7570, "message": "The dustbin waste is collected"}
+        ];
+
+        // Loop through the places and add markers for each location
+        places.forEach(function(place) {
+            var marker = L.marker([place.lat, place.lng]).addTo(map)
+                .bindPopup(`<b>${place.name}</b><br>${place.message}`);
+
+            // Automatically open the popup if the dustbin is full
+            if (place.message === "The dustbin is full") {
+                marker.openPopup();  // Open popup immediately
+            }
+        });
+    </script>
+</body>
+</html>
+
+{% endblock%}

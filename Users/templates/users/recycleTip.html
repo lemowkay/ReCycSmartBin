@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content%}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recycling Tips</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="{% url 'userpage' %}" class="back-btn">&lt;</a>
+            <h2>Recycling Tips</h2>
+        </header>
+        <section class="tips-section">
+            <h3>Improve your recycling habits and be a better citizen</h3>
+            <div class="tip-card">
+                <h4>Tip 1: Support recycling projects</h4>
+                <p>Advocate for recycling in your community.</p>
+            </div>
+            <div class="tip-card">
+                <h4>Tip 2: Educate and raise awareness</h4>
+                <p>Provide info about recycling guidelines to encourage participation.</p>
+            </div>
+        </section>
+    </div>
+{% endblock%}

@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content%}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReCycSmart Connect</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="{% url 'SmartBin-home' %}" class="back-btn" style="float: left;">&lt;</a>
+            <img src="{% static 'img/logo.jpg' %}" alt="ReCycSmart Connect Logo" class="logo">
+        </header>
+        <section class="banner">
+            <h2>Let's Clean Up Our Community</h2>
+        </section>
+        <nav>
+            <div class="card"><a href="{% url 'recycling_tips' %}">Recycling Tips</a></div>
+            <div class="card">
+                <p>Your history</p>
+                <h3>6 slips uploaded</h3>
+                <a href="{% url 'rewards' %}">Get rewards</a>
+            </div>
+            <div class="card forum">
+                <p>ReCycSmart Service Center</p>
+                <span>Your account has been activated. Now you can explore and join our program.</span>
+            </div>
+        </nav>
+    </div>
+{% endblock%}

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content%}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RecycSmart Connect</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="{% url 'pickup' %}" class="back-btn" style="float: left;">&lt;</a>
+            <img src="{% static 'img/logo.jpg' %}" alt="ReCycSmart Connect Logo" class="logo">
+        </header>
+        <body>
+            <div class="header">Pickup Requests</div>
+            <div class="content">
+                <p>Bin code: 00B900</p>
+                <p>Address: 50 Long Street, New Park</p>
+                <p>Full level currently at: 97%</p>
+                <form action="{% url 'map' %}" method="get">
+                    <button type="submit" class="button">Continue</button>
+                </form>
+            </div>
+        </body>
+
+
+{%endblock%}

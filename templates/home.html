@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block content%}
+<head>
+    <title>Your Django Website</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: sans-serif;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        .image {
+            width: 50%;
+        }
+
+        .slogan {
+            width: 50%;
+            text-align: right;
+            font-size: 2em;
+        }
+
+        img {
+            width: 100%;
+        }
+       
+       
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="image">
+            <img src="{{ image_url }}" alt="Website Image">
+        </div>
+        <div class="slogan">
+            <h1>{{ slogan }}</h1>
+            <br>
+            <form action="{% url 'userpage' %}" method="get">
+                <button type="submit" class="button">Lets Get Started</button>
+            </form>
+        </div>
+       
+    </div>
+
+{% endblock%}
